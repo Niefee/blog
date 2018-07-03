@@ -66,7 +66,10 @@
 /******/ ({
 
 /***/ 20:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 // special thanks to https://blog.naaln.com/2016/07/hexo-with-algolia/
 var initAlgolia = function initAlgolia() {
