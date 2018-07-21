@@ -23,14 +23,14 @@ categories: 笔记
 export default {
     title: 'index page',
     name: 'hello world',
-    num: 0
+    number: 0
 }
 ```
 
 ```js
 // actions.js
 export default {
-    increateNumAction(context, count){
+    increateNumberAction(context, count){
         context.commit('increate',count);
     }
 }
@@ -39,8 +39,8 @@ export default {
 ```js
 // getters.js
 export default {
-    getNumGetter: (state) => {
-        return "this num is: " + state.num;
+    getNumberGetter: (state) => {
+        return "this number is: " + state.number;
     }
 }
 ```
@@ -48,8 +48,8 @@ export default {
 ```js
 // mutations.js
 export default {
-    increate(state, count=1) {
-        state.num+=count;
+    increate(state, amount=1) {
+        state.number += amount;
     }
 }
 ```
@@ -66,14 +66,14 @@ this.$store.state.xxx;
 export default {
     computed: mapState({
         // 箭头函数可使代码更简练
-        count: state => state.count,
+        number: state => state.number,
 
-        // 传字符串参数 'count' 等同于 `state => state.count`
-        countAlias: 'count',
+        // 传字符串参数 'number' 等同于 `state => state.number`
+        numberAlias: 'number',
 
         // 为了能够使用 `this` 获取局部状态，必须使用常规函数
-        countPlusLocalState (state) {
-        return state.count + this.localCount
+        numberPlusLocalState (state) {
+        return state.number + this.localNumber
         }
     })
 }
@@ -109,7 +109,7 @@ this.$store.getters.XXX;
 
 // 引入调用
 mapGetters({
-  // 把 `this.doneCount` 映射为 `this.$store.getters.doneTodosCount`
-  doneCount: 'doneTodosCount'
+  // 把 `this.getNumber` 映射为 `this.$store.getters.getNumberGetter`
+  getNumber: 'getNumberGetter'
 })
 ```
