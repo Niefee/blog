@@ -36,6 +36,15 @@ let server = net.createServer((socket) => {
     socket.on('data', (data) => {
         console.log('DATA' + socket.remoteAddress + ":" + data);
         socket.write('You said "'+ data +'"\r\n') // 向客户端回发该数据
+
+        // 如果想浏览器收到数据，可以如下发送：
+        /*
+        socket.write(`
+			HTTP/1.1 200 ok
+			Content-Length: 11
+
+			hello,world
+		`);*/
     })
     
     /**
