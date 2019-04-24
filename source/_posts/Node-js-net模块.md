@@ -88,7 +88,7 @@ let server = net.createServer()
 server.listen(PORT,HOST)
 server.on('connection', (socket) => {
 	console.log('CONNECTED: ' + sock.remoteAddress +':'+ sock.remotePort);
-})*/
+})
 server.on('close', () => {
 	//关闭服务器，停止接收新的客户端的请求
 	console.log( 'close事件：服务端关闭' );
